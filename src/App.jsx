@@ -10,10 +10,10 @@ const App = () => {
     <>
       <Header>
         <NavLink to="/" activeClassName="active-nav" exact>
-          home
+          Home
         </NavLink>
         <NavLink to="/add" activeClassName="active-nav">
-          add todo
+          Add Todo
         </NavLink>
       </Header>
       <Main>
