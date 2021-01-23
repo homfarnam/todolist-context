@@ -1,9 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
-export default createGlobalStyle `
+export default createGlobalStyle`
 body {
   margin: 0;
   color: #333;
+  background-color:aliceblue;
 }
 #root {
   max-width: 640px;
@@ -26,4 +27,4 @@ li {
   margin: 0;
   padding: 0;
 }
-`;
+`
