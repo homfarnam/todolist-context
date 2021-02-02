@@ -1,20 +1,19 @@
 import * as React from "react"
 import { Link } from "react-router-dom"
-import styled from "styled-components"
-import { TodoList, useToDoList } from "../context"
-import { SubmitButton, Title } from "./AddTodo"
-
-const NothingTodo = styled.p`
-  font-size: 18px;
-`
+import { TodoList, useToDoList } from "../../context"
+import { SubmitButton, Title } from "../../styles/styles"
+import { NothingTodo } from "./styles"
 
 const MyTodoList = () => {
-  const [todoList] = useToDoList()
-  if (todoList.length) {
+  const {
+    state: { todos },
+  } = useToDoList()
+
+  if (todos.length) {
     return (
       <section>
         <Title>My To Do List</Title>
-        <TodoList todos={todoList} />
+        <TodoList todos={todos} />
       </section>
     )
   }

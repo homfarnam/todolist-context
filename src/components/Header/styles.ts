@@ -1,7 +1,6 @@
-import * as React from "react"
 import styled from "styled-components"
 
-const Header = styled.header`
+export const Header = styled.header`
   padding: 12px 0;
   @media screen and(max-width:640px) {
     margin-left: -12px;
@@ -14,14 +13,3 @@ const Header = styled.header`
     }
   }
 `
-
-const PageHeader = ({ children }) => {
-  return (
-    <Header>
-      {children}
-      <hr />
-    </Header>
-  )
-}
-
-export default PageHeader

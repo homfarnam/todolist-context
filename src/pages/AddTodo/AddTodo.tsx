@@ -1,41 +1,14 @@
-import { useToDoList, addTodo, generateTodo } from "../context"
+import { useToDoList, addTodo, generateTodo } from "../../context"
 import { useHistory } from "react-router-dom"
 import { useState } from "react"
-import styled from "styled-components"
-
-export const Title = styled.h2`
-  font-variant: petite-caps;
-  font-size: 30px;
-`
-
-const Label = styled.label`
-  font-size: 18px;
-`
-
-export const SubmitButton = styled.button`
-  color: #494949 !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: blanchedalmond;
-  padding: 5px;
-  border: 4px solid #494949 !important;
-  display: inline-block;
-  transition: all 0.4s ease 0s;
-  width: 100px;
-
-  :hover {
-    color: #ffffff !important;
-    background: #f6b93b;
-    border-color: black !important;
-    transition: all 0.4s ease 0s;
-  }
-`
+import { SubmitButton, Title } from "../../styles/styles"
+import { Label } from "./styles"
 
 const AddTodo = () => {
   const [todo, setTodo] = useState(() => generateTodo())
   const history = useHistory()
-  const [, dispatch] = useToDoList()
-  const submitHandler = (e) => {
+  const { dispatch } = useToDoList()
+  const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     if (!todo.name) {
       return window.alert("Please provide to do name.")
@@ -45,7 +18,7 @@ const AddTodo = () => {
       history.push("/")
     }, 10)
   }
-  const changeHandler = (e) => {
+  const changeHandler = (e: { target: { value: any } }) => {
     const name = e.target.value
     setTodo((todo) => ({ ...todo, name }))
   }

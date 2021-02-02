@@ -1,13 +1,10 @@
+import { TodoListProvider } from "context"
+import NotFound from "pages/NotFound/NotFound"
 import * as React from "react"
 import { Route, Switch } from "react-router-dom"
-import { TodoListProvider } from "../../context"
-import NotFound from "../../pages/NotFound"
-import styled from "styled-components"
+import { StyledMain } from "./styles"
 
-const StyledMain = styled.main`
-  padding: 12px 12px;
-`
-const Main = ({ children }) => {
+const Main: React.FC = ({ children }) => {
   return (
     <StyledMain>
       <TodoListProvider>
