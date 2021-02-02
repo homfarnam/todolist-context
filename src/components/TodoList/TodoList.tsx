@@ -1,9 +1,9 @@
-import Todo from "components/Todo/Todo"
-import { ITodo } from "context"
-import * as React from "react"
+import * as React from "react";
+import { ITodo } from "../../context";
+import Todo from "../Todo/Todo";
 
 interface TodoListProps extends React.ComponentProps<any> {
-  todos: ITodo[]
+  todos: ITodo[];
 }
 const TodoList = ({ todos }: TodoListProps) => {
   return (
@@ -14,7 +14,7 @@ const TodoList = ({ todos }: TodoListProps) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export { TodoList }
+export { TodoList };

@@ -1,9 +1,9 @@
-import * as React from "react"
-import { NavLink, Route } from "react-router-dom"
-import AddTodo from "./pages/AddTodo"
-import MyTodoList from "./pages/MyTodoList"
-import Header from "./components/Header/Header"
-import Main from "./components/Main/Main"
+import * as React from "react";
+import { NavLink, Route } from "react-router-dom";
+import { Header } from "./components/Header/styles";
+import Main from "./components/Main/Main";
+import AddTodo from "./pages/AddTodo/AddTodo";
+import MyTodoList from "./pages/MyTodoList/MyTodoList";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/add" component={AddTodo} />
       </Main>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
